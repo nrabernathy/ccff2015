@@ -13,7 +13,6 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: BeatSynchronizer
-  cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -59,7 +58,6 @@ PlayerSettings:
   visibleInBackground: 0
   macFullscreenMode: 2
   d3d9FullscreenMode: 1
-  d3d11FullscreenMode: 1
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -74,13 +72,13 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Company.ProductName
-  bundleVersion: 1.0
+  iPhoneBundleIdentifier: com.Company.ProductName
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 7bb9cbd4e88cb41ad8c006a85c769999
+  iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -111,14 +109,10 @@ PlayerSettings:
   iPadHighResPortraitSplashScreen: {fileID: 0}
   iPadLandscapeSplashScreen: {fileID: 0}
   iPadHighResLandscapeSplashScreen: {fileID: 0}
-  iOSLaunchScreenType: 0
-  iOSLaunchScreenPortrait: {fileID: 0}
-  iOSLaunchScreenLandscape: {fileID: 0}
+  iOSLaunchScreenImage: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
     rgba: 0
-  iOSLaunchScreenFillPct: 1
-  iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
@@ -184,7 +178,6 @@ PlayerSettings:
   ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
   ps4StartupImagePath: 
-  ps4SaveDataImagePath: 
   ps4BGMPath: 
   ps4ShareFilePath: 
   ps4NPtitleDatPath: 
@@ -194,7 +187,7 @@ PlayerSettings:
   ps4ApplicationParam2: 0
   ps4ApplicationParam3: 0
   ps4ApplicationParam4: 0
-  ps4Passcode: w2wneVSZhfjGWtkBhk8gkzEqL2Uc7sqy
+  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -217,7 +210,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: cdJOMBafFMfRIbwyhfqTCYei90RGvXbR
+  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
   psp2DRMType: 0
   psp2StorageType: 0
@@ -309,7 +302,9 @@ PlayerSettings:
   metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    XboxOne:
+      enus: true
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
@@ -362,12 +357,16 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
+  - Metro::ScriptingBackend
+  - WP8::ScriptingBackend
   - WebGL::ScriptingBackend
   - WebGL::audioCompressionFormat
   - WebGL::exceptionSupport
   - WebGL::memorySize
   - iOS::Architecture
   - iOS::ScriptingBackend
+  Metro::ScriptingBackend: 2
+  WP8::ScriptingBackend: 2
   WebGL::ScriptingBackend: 1
   WebGL::audioCompressionFormat: 4
   WebGL::exceptionSupport: 0
@@ -379,7 +378,5 @@ PlayerSettings:
   WebGL::dataCaching: 0
   stringPropertyNames:
   - WebGL::emscriptenArgs
-  - WebGL::template
   WebGL::emscriptenArgs: 
-  WebGL::template: APPLICATION:Default
   firstStreamedLevelWithResources: 0
