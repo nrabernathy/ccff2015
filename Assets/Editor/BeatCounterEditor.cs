@@ -30,9 +30,9 @@ public class BeatCounterEditor : Editor {
 
 		serializedObject.Update();
 		//EditorGUIUtility.LookLikeInspector();
-		SerializedProperty obs = serializedObject.FindProperty("observers");
+		SerializedProperty eve = serializedObject.FindProperty("DoOnBeat");
 		EditorGUI.BeginChangeCheck();
-		EditorGUILayout.PropertyField(obs, true);
+		EditorGUILayout.PropertyField(eve, true);
 		if (EditorGUI.EndChangeCheck())
 			serializedObject.ApplyModifiedProperties();
 		//EditorGUIUtility.LookLikeControls();

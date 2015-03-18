@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using UnityEngine.Events;
+using System;
 
 namespace SynchronizerData {
 
@@ -45,4 +47,6 @@ namespace SynchronizerData {
 		};
 	}
 
+	[Serializable]
+	public class BeatEvent : UnityEvent<BeatType>{}
 }

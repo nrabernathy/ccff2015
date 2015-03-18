@@ -22,6 +22,7 @@ public class BeatObserver : MonoBehaviour {
 	[HideInInspector]
 	public BeatType beatMask;
 
+	public BeatEvent beatEvent = new BeatEvent();
 
 	void Start ()
 	{
@@ -55,8 +56,11 @@ public class BeatObserver : MonoBehaviour {
 	/// <param name="beatType">The beat type to clear.</param>
 	IEnumerator WaitOnBeat (BeatType beatType)
 	{
+		beatEvent.Invoke (beatMask);
+
 		yield return new WaitForSeconds(beatWindow / 1000f);
 		beatMask ^= beatType;
-	}
 
+		beatEvent.Invoke (beatMask);
+	}
 }
