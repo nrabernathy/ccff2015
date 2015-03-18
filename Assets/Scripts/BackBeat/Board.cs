@@ -25,6 +25,10 @@ public class Board : MonoBehaviour {
 
 	public bool autoClearOnMatch = false;
 
+	public int numOfBeatsToSkipAfterMatch = 0;
+
+	private int beatsToSkip = 0;
+
 	public bool rowMoveOnBeat = false;
 
 	public RowPickerData picker;
@@ -159,13 +163,20 @@ public class Board : MonoBehaviour {
 	{
 		if(movableRowList.Count > 0 && mask.Equals (BeatType.OnBeat))
 		{
-			int y = picker.PickRow<RowData> (rowList, movableRowList);
-
-			movableRowList[y].MoveForward(cellPrefab);
-
-			if(movableRowList[y].CellCount >= columns && movableRowList[y].Trans.localPosition.x >= columns * cellPrefab.Size.x)
+			if(beatsToSkip > 0)
 			{
-				movableRowList.Remove (movableRowList[y]);
+				beatsToSkip--;
+			}
+			else
+			{
+				int y = picker.PickRow<RowData> (rowList, movableRowList);
+					
+				movableRowList[y].MoveForward(cellPrefab);
+
+				if(movableRowList[y].CellCount >= columns && movableRowList[y].Trans.localPosition.x >= columns * cellPrefab.Size.x)
+				{
+					movableRowList.Remove (movableRowList[y]);
+				}
 			}
 		}
 	}
@@ -187,6 +198,8 @@ public class Board : MonoBehaviour {
 		if(matches >= MatchRequirement || autoClearOnMatch)
 		{
 			PerformRowAction (ScoreMatches);
+
+			beatsToSkip = numOfBeatsToSkipAfterMatch;
 		}
 	}
 

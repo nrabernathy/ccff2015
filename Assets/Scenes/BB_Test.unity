@@ -531,7 +531,8 @@ MonoBehaviour:
   cellPrefab: {fileID: 11407364, guid: e2d564e69f4faa1409523323571ac587, type: 2}
   ccPrefab: {fileID: 11441298, guid: 4aafdbe862b1bf243a40360bdf503ce9, type: 2}
   MatchRequirement: 2
-  autoClearOnMatch: 0
+  autoClearOnMatch: 1
+  numOfBeatsToSkipAfterMatch: 0
   rowMoveOnBeat: 0
   picker:
     style: 1
